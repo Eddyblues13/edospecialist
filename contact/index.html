@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Edo Specialist Hospital</title>
+    <meta name="description" content="Contact Edo Specialist Hospital for appointments, inquiries, or emergency services. We're here to help 24/7.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <div id="header-container"></div>
+
+    <!-- Page Header -->
+    <section class="hero-gradient pt-32 pb-16 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl text-blue-100">Get in touch with us for appointments, inquiries, or emergency services</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card section-fade text-center">
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Address</h3>
+                    <p class="text-gray-600">
+                        Edo Specialist Hospital<br>
+                        Teaching Hospital Complex<br>
+                        Benin City, Edo State<br>
+                        Nigeria
+                    </p>
+                </div>
+                
+                <div class="card section-fade text-center">
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Phone</h3>
+                    <p class="text-gray-600">
+                        Emergency: <a href="tel:+2341234567890" class="text-primary-600 hover:underline">+234 (0) 123 456 7890</a><br>
+                        General: <a href="tel:+2341234567891" class="text-primary-600 hover:underline">+234 (0) 123 456 7891</a><br>
+                        Appointments: <a href="tel:+2341234567892" class="text-primary-600 hover:underline">+234 (0) 123 456 7892</a>
+                    </p>
+                </div>
+                
+                <div class="card section-fade text-center">
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Email</h3>
+                    <p class="text-gray-600">
+                        <a href="mailto:info@edospecialisthospital.com.ng" class="text-primary-600 hover:underline">info@edospecialisthospital.com.ng</a><br>
+                        <a href="mailto:appointments@edospecialisthospital.com.ng" class="text-primary-600 hover:underline">appointments@edospecialisthospital.com.ng</a><br>
+                        <a href="mailto:education@edospecialisthospital.com.ng" class="text-primary-600 hover:underline">education@edospecialisthospital.com.ng</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Appointment Form -->
+                <div class="section-fade">
+                    <div class="card">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Book an Appointment</h2>
+                        <form id="appointmentForm" data-validate class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required class="input-field">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
+                                    <input type="email" name="email" required class="input-field">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Phone <span class="text-red-500">*</span></label>
+                                    <input type="tel" name="phone" required class="input-field">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Department <span class="text-red-500">*</span></label>
+                                <select name="department" required class="input-field">
+                                    <option value="">Select Department</option>
+                                    <option>Cardiology</option>
+                                    <option>Neurology</option>
+                                    <option>Pediatrics</option>
+                                    <option>Surgery</option>
+                                    <option>Internal Medicine</option>
+                                    <option>Emergency</option>
+                                    <option>Radiology</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Preferred Date <span class="text-red-500">*</span></label>
+                                    <input type="date" name="date" required class="input-field">
+                                </div>
+                                
+                                <div id="timeSlotContainer">
+                                    <!-- Time slots will be generated here -->
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Reason for Visit</label>
+                                <textarea name="message" rows="4" class="input-field"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary w-full">
+                                Submit Appointment Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Form & Info -->
+                <div class="space-y-8">
+                    <div class="card section-fade">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                        <form id="contactForm" data-validate class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required class="input-field">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required class="input-field">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Subject <span class="text-red-500">*</span></label>
+                                <input type="text" name="subject" required class="input-field">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Message <span class="text-red-500">*</span></label>
+                                <textarea name="message" rows="5" required class="input-field"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="card section-fade bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Operating Hours</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Emergency Services</span>
+                                <span class="font-semibold">24/7</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Outpatient Clinic</span>
+                                <span class="font-semibold">Mon-Fri: 8AM-6PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span class="font-semibold">9AM-2PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span class="font-semibold">Emergency Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 section-fade">
+                <h2 class="section-title">Find Us</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="section-fade">
+                <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt text-primary-600 text-6xl mb-4"></i>
+                        <p class="text-gray-600 text-lg">Interactive map would be embedded here</p>
+                        <p class="text-gray-500 mt-2">Edo Specialist Hospital, Teaching Hospital Complex, Benin City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary-600 text-white p-4 rounded-full shadow-lg hover:bg-primary-700 transition opacity-0 invisible z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/appointment.js"></script>
+    <script src="/assets/js/loadPartials.js"></script>
+</body>
+</html>
+
