@@ -10,6 +10,17 @@ app.use(express.static(path.join(__dirname)));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/partials', express.static(path.join(__dirname, 'partials')));
 
+// Serve robots.txt and sitemap.xml
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
 // Middleware to serve pages without .html extension
 app.get('/', (req, res) => {
   const indexPath = path.join(__dirname, 'index.html');

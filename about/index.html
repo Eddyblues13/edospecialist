@@ -6,11 +6,195 @@
     <title>About Us - Edo Specialist Hospital</title>
     <meta name="description" content="Learn about Edo Specialist Hospital's mission, vision, values, and commitment to excellence in healthcare and medical education.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/assets/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-scroll {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Mobile Navigation Styles */
+        #mobileMenu {
+            display: none;
+        }
+        
+        #mobileMenu.show {
+            display: block;
+        }
+        
+        #mobileMenu.show > .absolute {
+            transform: translateX(0) !important;
+        }
+        
+        #mobileMenu > .absolute {
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .mobile-nav-link {
+            position: relative;
+        }
+        
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-nav-link:hover::before,
+        .mobile-nav-link.active::before {
+            transform: scaleY(1);
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <div id="header-container"></div>
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center space-x-3 group">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-2 rounded-lg transform group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-hospital text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Edo Specialist Hospital</h1>
+                        <p class="text-xs text-gray-600">Teaching Hospital</p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 font-medium transition relative group nav-link">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/about" class="text-gray-700 hover:text-blue-600 font-medium transition relative group nav-link">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/services" class="text-gray-700 hover:text-blue-600 font-medium transition relative group nav-link">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/education" class="text-gray-700 hover:text-blue-600 font-medium transition relative group nav-link">
+                        Education
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/doctors" class="text-gray-700 hover:text-blue-600 font-medium transition relative group nav-link">
+                        Doctors
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/news" class="text-gray-700 hover:text-blue-600 font-medium transition relative group nav-link">
+                        News
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/contact" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                        Book Appointment
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 focus:outline-none relative z-50 p-2 rounded-lg hover:bg-gray-100 transition" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu - Enhanced -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40" aria-hidden="true">
+            <div class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform translate-x-full">
+                <div class="flex flex-col h-full">
+                    <!-- Mobile Menu Header -->
+                    <div class="flex items-center justify-between p-6 border-b bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-white/20 p-2 rounded-lg">
+                                <i class="fas fa-hospital text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Menu</h3>
+                                <p class="text-xs text-blue-100">Edo Specialist Hospital</p>
+                            </div>
+                        </div>
+                        <button id="mobileMenuClose" class="text-white hover:bg-white/20 p-2 rounded-lg transition" aria-label="Close menu">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Items -->
+                    <nav class="flex-1 overflow-y-auto py-6" aria-label="Mobile navigation" style="max-height: calc(100vh - 200px); -webkit-overflow-scrolling: touch;">
+                        <div class="px-4 space-y-2">
+                            <a href="/" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-home text-blue-600 w-6"></i>
+                                <span>Home</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/about" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-info-circle text-blue-600 w-6"></i>
+                                <span>About Us</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/services" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-stethoscope text-blue-600 w-6"></i>
+                                <span>Services</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/education" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-graduation-cap text-blue-600 w-6"></i>
+                                <span>Education</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/doctors" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-user-md text-blue-600 w-6"></i>
+                                <span>Our Doctors</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/news" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-newspaper text-blue-600 w-6"></i>
+                                <span>News & Updates</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/contact" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-phone text-blue-600 w-6"></i>
+                                <span>Contact Us</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                        </div>
+                    </nav>
+                    
+                    <!-- Mobile Menu Footer -->
+                    <div class="p-4 border-t bg-gray-50">
+                        <a href="/contact" class="block w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-4 rounded-xl font-semibold text-center hover:shadow-lg transform hover:scale-[1.02] transition duration-300">
+                            <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+                        </a>
+                        <div class="mt-4 text-center">
+                            <a href="tel:+2348029232591" class="text-blue-600 font-semibold text-sm hover:underline">
+                                <i class="fas fa-phone-alt mr-2"></i>Emergency: +234 802 923 2591
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Page Header -->
     <section class="hero-gradient pt-32 pb-16 text-white">
@@ -231,13 +415,139 @@
         </div>
     </section>
 
-    <div id="footer-container"></div>
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary-600 text-white p-4 rounded-full shadow-lg hover:bg-primary-700 transition opacity-0 invisible z-40">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-2 rounded-lg">
+                            <i class="fas fa-hospital text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Edo Specialist Hospital</h3>
+                            <p class="text-sm text-gray-400">Teaching Hospital</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Providing exceptional healthcare and medical education in Nigeria.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <nav aria-label="Footer navigation">
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="/about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="/services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="/education" class="hover:text-white transition">Education</a></li>
+                        <li><a href="/doctors" class="hover:text-white transition">Our Doctors</a></li>
+                        <li><a href="/news" class="hover:text-white transition">News & Updates</a></li>
+                        <li><a href="/contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <nav aria-label="Medical services">
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="/services" class="hover:text-white transition">Cardiology</a></li>
+                        <li><a href="/services" class="hover:text-white transition">Neurology</a></li>
+                        <li><a href="/services" class="hover:text-white transition">Pediatrics</a></li>
+                        <li><a href="/services" class="hover:text-white transition">Surgery</a></li>
+                        <li><a href="/services" class="hover:text-white transition">Emergency Care</a></li>
+                        <li><a href="/services" class="hover:text-white transition">View All</a></li>
+                    </ul>
+                </nav>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact & Hours</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1"></i>
+                            <span>Edo Specialist Hospital<br>Teaching Hospital Complex<br>Benin City, Edo State, Nigeria</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <div>
+                                <a href="tel:+2348029232591" class="hover:text-white transition block">+234 802 923 2591</a>
+                                <a href="tel:+23480117433744" class="hover:text-white transition block text-sm">+234 801 174 33744</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span>info@edospecialisthospital.com.ng</span>
+                        </li>
+                        <li class="flex items-start space-x-3 mt-4">
+                            <i class="fas fa-clock text-blue-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white">Opening Hours:</span><br>
+                                Mon-Fri: 8AM-6PM<br>
+                                Saturday: 9AM-2PM<br>
+                                Sunday: Emergency Only<br>
+                                <span class="text-red-400 font-semibold">Emergency: 24/7</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Edo Specialist Hospital. All rights reserved. | <a href="#" class="hover:text-white transition">Privacy Policy</a> | <a href="#" class="hover:text-white transition">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition opacity-0 invisible z-40 transform hover:scale-110">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="/assets/js/mobile-nav.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/loadPartials.js"></script>
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    navbar.classList.add('nav-scroll');
+                } else {
+                    navbar.classList.remove('nav-scroll');
+                }
+            });
+        }
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                    backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTop.classList.add('opacity-0', 'invisible');
+                    backToTop.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
 </body>
 </html>
 

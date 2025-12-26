@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Hospital">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edo Specialist Hospital - Teaching Hospital | Leading Healthcare & Medical Education</title>
-    <meta name="description" content="Edo Specialist Hospital - A premier teaching hospital providing exceptional healthcare services and medical education in Nigeria.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Edo Specialist Hospital - Teaching Hospital | Leading Healthcare & Medical Education in Nigeria</title>
+    <meta name="title" content="Edo Specialist Hospital - Teaching Hospital | Leading Healthcare & Medical Education in Nigeria">
+    <meta name="description" content="Edo Specialist Hospital is a premier teaching hospital in Benin City, Edo State, Nigeria. Providing world-class healthcare services, medical education, and training. 24/7 emergency care, expert doctors, and state-of-the-art facilities.">
+    <meta name="keywords" content="Edo Specialist Hospital, teaching hospital Nigeria, Benin City hospital, medical services Nigeria, healthcare Edo State, hospital Benin City, medical education Nigeria, emergency care Nigeria, specialist doctors Nigeria, hospital appointments">
+    <meta name="author" content="Edo Specialist Hospital">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="geo.region" content="NG-ED">
+    <meta name="geo.placename" content="Benin City">
+    <meta name="geo.position" content="6.3350;5.6037">
+    <link rel="canonical" href="https://edospecialisthospital.com.ng/">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="application-name" content="Edo Specialist Hospital">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://edospecialisthospital.com.ng/"
+        }]
+    }
+    </script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edospecialisthospital.com.ng/">
+    <meta property="og:title" content="Edo Specialist Hospital - Teaching Hospital | Leading Healthcare & Medical Education">
+    <meta property="og:description" content="Premier teaching hospital in Benin City, Nigeria. World-class healthcare services, medical education, and 24/7 emergency care. Expert doctors and state-of-the-art facilities.">
+    <meta property="og:image" content="https://edospecialisthospital.com.ng/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Edo Specialist Hospital">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://edospecialisthospital.com.ng/">
+    <meta name="twitter:title" content="Edo Specialist Hospital - Teaching Hospital | Leading Healthcare">
+    <meta name="twitter:description" content="Premier teaching hospital in Benin City, Nigeria. World-class healthcare services and medical education.">
+    <meta name="twitter:image" content="https://edospecialisthospital.com.ng/assets/images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Tailwind CSS - Development CDN (replace with production build) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
@@ -105,11 +169,198 @@
         .counter {
             font-variant-numeric: tabular-nums;
         }
+        
+        /* Mobile Navigation Styles */
+        #mobileMenu {
+            display: none;
+        }
+        
+        #mobileMenu.show {
+            display: block;
+        }
+        
+        #mobileMenu.show .absolute {
+            transform: translateX(0) !important;
+        }
+        
+        #mobileMenu .absolute {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-nav-link {
+            position: relative;
+        }
+        
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-nav-link:hover::before,
+        .mobile-nav-link.active::before {
+            transform: scaleY(1);
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .hero-gradient h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .card-3d:hover {
+                transform: scale(1.02);
+            }
+            
+            .swiper-slide {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-gradient h1 {
+                font-size: 1.75rem;
+                line-height: 1.3;
+            }
+            
+            .text-5xl, .text-7xl {
+                font-size: 2rem;
+            }
+            
+            .text-4xl {
+                font-size: 1.75rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-xl {
+                font-size: 1.125rem;
+            }
+            
+            .swiper-slide {
+                margin-bottom: 1rem;
+            }
+            
+            .card-3d {
+                margin-bottom: 1rem;
+            }
+            
+            section {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-gradient {
+                padding-top: 6rem;
+                padding-bottom: 3rem;
+                min-height: auto;
+            }
+            
+            .hero-gradient h1 {
+                font-size: 1.5rem;
+            }
+            
+            .text-5xl, .text-7xl {
+                font-size: 1.75rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 overflow-x-hidden">
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Hospital",
+        "name": "Edo Specialist Hospital",
+        "alternateName": "Edo Specialist Teaching Hospital",
+        "url": "https://edospecialisthospital.com.ng",
+        "logo": "https://edospecialisthospital.com.ng/assets/images/logo.png",
+        "image": "https://edospecialisthospital.com.ng/assets/images/hospital-building.jpg",
+        "description": "Premier teaching hospital in Benin City, Edo State, Nigeria providing world-class healthcare services and medical education",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Teaching Hospital Complex",
+            "addressLocality": "Benin City",
+            "addressRegion": "Edo State",
+            "addressCountry": "NG"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "6.3350",
+            "longitude": "5.6037"
+        },
+        "telephone": "+234-802-923-2591",
+        "email": "info@edospecialisthospital.com.ng",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "14:00"
+            }
+        ],
+        "priceRange": "$$",
+        "medicalSpecialty": [
+            "Cardiology",
+            "Neurology",
+            "Pediatrics",
+            "Surgery",
+            "Emergency Medicine",
+            "Radiology",
+            "Internal Medicine"
+        ],
+        "numberOfBeds": "300",
+        "numberOfEmployees": "500"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Edo Specialist Hospital",
+        "url": "https://edospecialisthospital.com.ng",
+        "logo": "https://edospecialisthospital.com.ng/assets/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+234-802-923-2591",
+            "contactType": "Emergency",
+            "availableLanguage": ["English", "Pidgin English"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/edospecialisthospital",
+            "https://www.twitter.com/edospecialist",
+            "https://www.linkedin.com/company/edospecialisthospital",
+            "https://www.instagram.com/edospecialisthospital"
+        ]
+    }
+    </script>
+
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="/" class="flex items-center space-x-3 group">
@@ -154,35 +405,95 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 focus:outline-none relative z-50 p-2 rounded-lg hover:bg-gray-100 transition" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl transition-transform duration-300"></i>
                 </button>
             </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-4 space-y-4">
-                <a href="/" class="block text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
-                <a href="/about" class="block text-gray-700 hover:text-blue-600 font-medium transition">About</a>
-                <a href="/services" class="block text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
-                <a href="/education" class="block text-gray-700 hover:text-blue-600 font-medium transition">Education</a>
-                <a href="/doctors" class="block text-gray-700 hover:text-blue-600 font-medium transition">Doctors</a>
-                <a href="/news" class="block text-gray-700 hover:text-blue-600 font-medium transition">News</a>
-                <a href="/contact" class="block text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
-                <a href="/contact" class="block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2 rounded-lg font-semibold text-center">
-                    Book Appointment
-                </a>
+        <!-- Mobile Menu - Enhanced -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40" aria-hidden="true">
+            <div class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform translate-x-full">
+                <div class="flex flex-col h-full">
+                    <!-- Mobile Menu Header -->
+                    <div class="flex items-center justify-between p-6 border-b bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-white/20 p-2 rounded-lg">
+                                <i class="fas fa-hospital text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Menu</h3>
+                                <p class="text-xs text-blue-100">Edo Specialist Hospital</p>
+                            </div>
+                        </div>
+                        <button id="mobileMenuClose" class="text-white hover:bg-white/20 p-2 rounded-lg transition" aria-label="Close menu">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Items -->
+                    <nav class="flex-1 overflow-y-auto py-6" aria-label="Mobile navigation" style="max-height: calc(100vh - 200px); -webkit-overflow-scrolling: touch;">
+                        <div class="px-4 space-y-2">
+                            <a href="/" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-home text-blue-600 w-6"></i>
+                                <span>Home</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/about" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-info-circle text-blue-600 w-6"></i>
+                                <span>About Us</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/services" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-stethoscope text-blue-600 w-6"></i>
+                                <span>Services</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/education" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-graduation-cap text-blue-600 w-6"></i>
+                                <span>Education</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/doctors" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-user-md text-blue-600 w-6"></i>
+                                <span>Our Doctors</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/news" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-newspaper text-blue-600 w-6"></i>
+                                <span>News & Updates</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                            <a href="/contact" class="flex items-center space-x-4 p-4 rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition group mobile-nav-link">
+                                <i class="fas fa-phone text-blue-600 w-6"></i>
+                                <span>Contact Us</span>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:text-blue-600"></i>
+                            </a>
+                        </div>
+                    </nav>
+                    
+                    <!-- Mobile Menu Footer -->
+                    <div class="p-4 border-t bg-gray-50">
+                        <a href="/contact" class="block w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-4 rounded-xl font-semibold text-center hover:shadow-lg transform hover:scale-[1.02] transition duration-300">
+                            <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+                        </a>
+                        <div class="mt-4 text-center">
+                            <a href="tel:+2348029232591" class="text-blue-600 font-semibold text-sm hover:underline">
+                                <i class="fas fa-phone-alt mr-2"></i>Emergency: +234 802 923 2591
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section with Particles -->
-    <section class="hero-gradient pt-32 pb-20 text-white relative min-h-screen flex items-center">
-        <div id="particles-js"></div>
+    <section class="hero-gradient pt-32 pb-20 text-white relative min-h-screen flex items-center" aria-label="Hero section">
+        <div id="particles-js" aria-hidden="true"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-content w-full">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
+                <header data-aos="fade-right" data-aos-duration="1000">
                     <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                         Excellence in <span class="gradient-text bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-100">Healthcare</span> & Medical Education
                     </h1>
@@ -200,8 +511,8 @@
                             <i class="fas fa-info-circle mr-2"></i>Learn More
                         </a>
                     </div>
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                </header>
+                <aside data-aos="fade-left" data-aos-duration="1000" class="relative" aria-label="Hospital statistics">
                     <div class="glass-effect rounded-3xl p-8 floating">
                         <div class="grid grid-cols-2 gap-6">
                             <div class="text-center card-3d">
@@ -228,10 +539,10 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" aria-labelledby="why-choose-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose Edo Specialist Hospital?</h2>
+            <header class="text-center mb-16" data-aos="fade-up">
+                <h2 id="why-choose-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose Edo Specialist Hospital?</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     We are committed to providing exceptional healthcare services that meet international standards while remaining accessible to the Nigerian community.
@@ -244,7 +555,7 @@
                         <i class="fas fa-user-md text-blue-600 text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Expert Medical Team</h3>
-                    <p class="text-gray-600">Our team consists of highly qualified Nigerian and international specialists with years of experience in their respective fields, ensuring you receive the best possible care.</p>
+                    <p class="text-gray-600">Our distinguished medical team comprises highly qualified Nigerian and international specialists, each bringing years of extensive experience in their respective fields. This diverse expertise ensures that every patient receives the highest standard of personalized, evidence-based medical care.</p>
                 </div>
                 
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
@@ -252,7 +563,7 @@
                         <i class="fas fa-microscope text-green-600 text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Advanced Technology</h3>
-                    <p class="text-gray-600">We invest in state-of-the-art medical equipment and facilities, ensuring accurate diagnosis and effective treatment using the latest medical innovations.</p>
+                    <p class="text-gray-600">We maintain a steadfast commitment to investing in state-of-the-art medical equipment and cutting-edge facilities. This continuous technological advancement enables our medical professionals to deliver precise diagnoses and highly effective treatments utilizing the most recent medical innovations and methodologies.</p>
                 </div>
                 
                 <div class="text-center" data-aos="fade-up" data-aos-delay="300">
@@ -260,7 +571,7 @@
                         <i class="fas fa-graduation-cap text-purple-600 text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Teaching Excellence</h3>
-                    <p class="text-gray-600">As a teaching hospital, we stay at the forefront of medical knowledge and innovation, training the next generation of Nigerian healthcare professionals.</p>
+                    <p class="text-gray-600">As a distinguished teaching hospital, we remain at the vanguard of medical knowledge and innovation. Our comprehensive training programs are designed to develop the next generation of Nigerian healthcare professionals, equipping them with the skills, knowledge, and ethical foundation necessary to excel in their medical careers.</p>
                 </div>
                 
                 <div class="text-center" data-aos="fade-up" data-aos-delay="400">
@@ -268,17 +579,17 @@
                         <i class="fas fa-heart text-red-600 text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Patient-Centered Care</h3>
-                    <p class="text-gray-600">We prioritize patient comfort, safety, and satisfaction, treating every patient with dignity, respect, and the compassion that defines Nigerian healthcare values.</p>
+                    <p class="text-gray-600">We place patient comfort, safety, and satisfaction at the core of everything we do. Every individual who walks through our doors is treated with the utmost dignity, respect, and compassionate care that embodies the fundamental values of Nigerian healthcare tradition.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Image Carousel Section with Nigerian People -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50" aria-labelledby="facilities-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Facilities & Team</h2>
+            <header class="text-center mb-12" data-aos="fade-up">
+                <h2 id="facilities-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Facilities & Team</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600">State-of-the-art medical facilities and our dedicated Nigerian medical professionals</p>
             </div>
@@ -287,7 +598,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Nigerian Doctors" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Nigerian doctors and medical professionals at Edo Specialist Hospital providing patient care" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                                 <div class="text-white">
                                     <h3 class="text-2xl font-bold mb-2">Our Medical Team</h3>
@@ -298,7 +609,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800" alt="Medical Equipment" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800" alt="Advanced medical equipment and technology at Edo Specialist Hospital in Benin City, Nigeria" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                                 <div class="text-white">
                                     <h3 class="text-2xl font-bold mb-2">Advanced Medical Equipment</h3>
@@ -309,7 +620,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Patient Care" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Compassionate patient care by Nigerian healthcare professionals at Edo Specialist Hospital" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                                 <div class="text-white">
                                     <h3 class="text-2xl font-bold mb-2">Compassionate Patient Care</h3>
@@ -320,7 +631,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800" alt="Operating Room" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800" alt="Modern surgical suites and operating rooms at Edo Specialist Hospital teaching hospital" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                                 <div class="text-white">
                                     <h3 class="text-2xl font-bold mb-2">Surgical Suites</h3>
@@ -331,7 +642,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800" alt="Emergency Department" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800" alt="24/7 emergency department at Edo Specialist Hospital in Benin City, Edo State, Nigeria" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                                 <div class="text-white">
                                     <h3 class="text-2xl font-bold mb-2">Emergency Department</h3>
@@ -342,7 +653,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Medical Education" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Medical education and training programs for Nigerian medical students at Edo Specialist Hospital" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                                 <div class="text-white">
                                     <h3 class="text-2xl font-bold mb-2">Medical Education</h3>
@@ -360,35 +671,35 @@
     </section>
 
     <!-- Quick Stats -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white" aria-label="Hospital statistics">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8" role="list">
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="100" role="listitem">
+                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" aria-hidden="true">
                         <i class="fas fa-user-md text-3xl"></i>
                     </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-counter="200">0</div>
+                    <div class="text-4xl font-bold mb-2 counter" data-counter="200" aria-label="200 specialist doctors">0</div>
                     <div class="text-blue-100">Specialist Doctors</div>
                 </div>
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.2s;">
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="200" role="listitem">
+                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.2s;" aria-hidden="true">
                         <i class="fas fa-graduation-cap text-3xl"></i>
                     </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-counter="500">0</div>
+                    <div class="text-4xl font-bold mb-2 counter" data-counter="500" aria-label="500 medical students">0</div>
                     <div class="text-blue-100">Medical Students</div>
                 </div>
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.4s;">
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="300" role="listitem">
+                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.4s;" aria-hidden="true">
                         <i class="fas fa-bed text-3xl"></i>
                     </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-counter="300">0</div>
+                    <div class="text-4xl font-bold mb-2 counter" data-counter="300" aria-label="300 hospital beds">0</div>
                     <div class="text-blue-100">Hospital Beds</div>
                 </div>
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.6s;">
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="400" role="listitem">
+                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.6s;" aria-hidden="true">
                         <i class="fas fa-award text-3xl"></i>
                     </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-counter="15">0</div>
+                    <div class="text-4xl font-bold mb-2 counter" data-counter="15" aria-label="15 accreditations">0</div>
                     <div class="text-blue-100">Accreditations</div>
                 </div>
             </div>
@@ -396,13 +707,13 @@
     </section>
 
     <!-- Opening Hours Section -->
-    <section class="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600 text-white">
+    <section class="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600 text-white" aria-labelledby="opening-hours-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Opening Hours</h2>
+                    <h2 id="opening-hours-heading" class="text-4xl md:text-5xl font-bold mb-6">Opening Hours</h2>
                     <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                        We are committed to providing accessible healthcare services throughout the week. Our emergency department operates 24/7 to ensure you receive care whenever you need it.
+                        We are dedicated to providing comprehensive and accessible healthcare services throughout the week. Our state-of-the-art emergency department operates continuously, 24 hours a day, 7 days a week, ensuring that critical medical care is available whenever you need it most.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between p-4 bg-white/10 backdrop-blur-lg rounded-lg">
@@ -437,8 +748,11 @@
                     <div class="mt-8 p-6 bg-white/10 backdrop-blur-lg rounded-xl">
                         <h3 class="text-xl font-bold mb-3">Emergency Contact</h3>
                         <p class="text-blue-100 mb-2">For medical emergencies, call our 24/7 hotline:</p>
-                        <a href="tel:+2341234567890" class="text-2xl font-bold hover:text-yellow-300 transition">
-                            <i class="fas fa-phone mr-2"></i>+234 (0) 123 456 7890
+                        <a href="tel:+2348029232591" class="text-2xl font-bold hover:text-yellow-300 transition">
+                            <i class="fas fa-phone mr-2"></i>+234 802 923 2591
+                        </a>
+                        <a href="tel:+23480117433744" class="text-xl font-semibold hover:text-yellow-300 transition block mt-2">
+                            <i class="fas fa-phone-alt mr-2"></i>+234 801 174 33744
                         </a>
                     </div>
                 </div>
@@ -462,9 +776,9 @@
                                 <div>
                                     <h4 class="font-semibold mb-1">Phone Numbers</h4>
                                     <p class="text-blue-100">
-                                        Emergency: +234 (0) 123 456 7890<br>
-                                        General: +234 (0) 123 456 7891<br>
-                                        Appointments: +234 (0) 123 456 7892
+                                        Emergency: +234 802 923 2591<br>
+                                        General: +234 801 174 33744<br>
+                                        Appointments: +234 801 174 33744
                                     </p>
                                 </div>
                             </div>
@@ -497,20 +811,20 @@
     </section>
 
     <!-- About Hospital Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" aria-labelledby="about-hospital-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <article class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Our Hospital</h2>
+                    <h2 id="about-hospital-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Our Hospital</h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-6"></div>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Established in 1999, Edo Specialist Hospital has grown to become one of Nigeria's premier teaching hospitals. Located in the historic city of Benin, Edo State, we serve as a beacon of medical excellence in West Africa.
+                        Established in 1999, Edo Specialist Hospital has evolved into one of Nigeria's most distinguished teaching hospitals. Strategically positioned in the historic city of Benin, Edo State, we have established ourselves as a beacon of medical excellence and innovation throughout West Africa.
                     </p>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Our hospital is deeply rooted in the Nigerian healthcare system, understanding the unique needs of our community. We combine international medical standards with local expertise, ensuring that our patients receive care that is both world-class and culturally sensitive.
+                        Our institution is deeply embedded within the Nigerian healthcare ecosystem, possessing an intimate understanding of our community's unique healthcare needs. We seamlessly integrate internationally recognized medical standards with locally developed expertise, ensuring that every patient receives care that is both world-class in quality and culturally attuned to Nigerian values.
                     </p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        As a teaching hospital, we play a crucial role in training the next generation of Nigerian doctors, nurses, and healthcare professionals. Our educational programs are designed to address the specific healthcare challenges facing Nigeria and the broader African continent.
+                        As a premier teaching hospital, we serve a pivotal role in cultivating the next generation of Nigerian medical professionals, including doctors, nurses, and allied health specialists. Our comprehensive educational programs are meticulously designed to address the specific healthcare challenges confronting Nigeria and the broader African continent, while simultaneously advancing medical knowledge through cutting-edge research initiatives.
                     </p>
                     <a href="/about" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 inline-block">
                         <i class="fas fa-info-circle mr-2"></i>Learn More About Us
@@ -518,7 +832,7 @@
                 </div>
                 <div data-aos="fade-left" class="relative">
                     <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl card-3d">
-                        <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Edo Specialist Hospital" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Edo Specialist Hospital building in Benin City, Edo State, Nigeria - premier teaching hospital" class="w-full h-full object-cover" loading="lazy" width="800" height="600">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                             <div class="text-white">
                                 <h3 class="text-2xl font-bold mb-2">Edo Specialist Hospital</h3>
@@ -549,7 +863,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Cardiology</h3>
                     <p class="text-gray-600 mb-4">
-                        Advanced cardiac care including diagnostics, interventional procedures, and cardiac rehabilitation.
+                        Our cardiology department provides comprehensive cardiac care services, encompassing advanced diagnostic procedures, cutting-edge interventional techniques, and comprehensive cardiac rehabilitation programs designed to optimize patient outcomes and improve quality of life.
                     </p>
                     <a href="/services" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                         Learn More <i class="fas fa-arrow-right ml-2"></i>
@@ -562,7 +876,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Neurology</h3>
                     <p class="text-gray-600 mb-4">
-                        Comprehensive neurological services for brain, spine, and nervous system disorders.
+                        Our neurology department delivers comprehensive neurological services addressing a wide spectrum of brain, spinal cord, and nervous system disorders, utilizing advanced diagnostic tools and evidence-based treatment protocols.
                     </p>
                     <a href="/services" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                         Learn More <i class="fas fa-arrow-right ml-2"></i>
@@ -575,7 +889,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Pediatrics</h3>
                     <p class="text-gray-600 mb-4">
-                        Specialized care for infants, children, and adolescents with dedicated pediatric specialists.
+                        Our pediatrics department offers specialized, age-appropriate medical care for infants, children, and adolescents, delivered by dedicated pediatric specialists who understand the unique healthcare needs of young patients and their families.
                     </p>
                     <a href="/services" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                         Learn More <i class="fas fa-arrow-right ml-2"></i>
@@ -588,7 +902,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Emergency Care</h3>
                     <p class="text-gray-600 mb-4">
-                        24/7 emergency services with trauma care, critical care, and rapid response teams.
+                        Our emergency department operates 24/7, providing immediate access to comprehensive emergency services including advanced trauma care, critical care management, and highly trained rapid response teams ready to address any medical emergency.
                     </p>
                     <a href="/services" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                         Learn More <i class="fas fa-arrow-right ml-2"></i>
@@ -601,7 +915,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Surgery</h3>
                     <p class="text-gray-600 mb-4">
-                        Advanced surgical procedures across multiple specialties with minimally invasive options.
+                        Our surgical department performs advanced surgical procedures across multiple specialties, offering both traditional and minimally invasive surgical options to ensure optimal patient outcomes with reduced recovery times.
                     </p>
                     <a href="/services" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                         Learn More <i class="fas fa-arrow-right ml-2"></i>
@@ -614,7 +928,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Radiology</h3>
                     <p class="text-gray-600 mb-4">
-                        State-of-the-art imaging services including MRI, CT scans, ultrasound, and X-ray.
+                        Our radiology department provides state-of-the-art diagnostic imaging services, including advanced MRI, CT scans, ultrasound, and digital X-ray technology, enabling precise diagnosis and treatment planning.
                     </p>
                     <a href="/services" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                         Learn More <i class="fas fa-arrow-right ml-2"></i>
@@ -631,10 +945,10 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
+            <header class="text-center mb-16" data-aos="fade-up">
+                <h2 id="testimonials-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600">Real experiences from Nigerian families we've served</p>
             </div>
@@ -658,7 +972,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p class="text-gray-600 italic">
-                        "The care I received at Edo Specialist Hospital was exceptional. The doctors took time to explain everything in a way I could understand, and the staff treated me like family. As a Nigerian, I felt truly cared for."
+                        "The comprehensive care I received at Edo Specialist Hospital exceeded all my expectations. The medical professionals demonstrated exceptional expertise while taking considerable time to explain my treatment plan in clear, understandable terms. The entire staff treated me with the warmth and respect that reflects true Nigerian hospitality. As a patient, I felt genuinely valued and cared for throughout my entire medical journey."
                     </p>
                 </div>
                 
@@ -680,7 +994,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p class="text-gray-600 italic">
-                        "When my daughter needed emergency care, Edo Specialist Hospital was there for us 24/7. The pediatric team is amazing, and they made sure my child received the best treatment. I'm grateful for their dedication."
+                        "When my daughter required urgent medical attention, Edo Specialist Hospital's emergency department provided immediate, professional care. The pediatric team demonstrated remarkable skill and compassion, ensuring my child received the highest standard of treatment. Their unwavering dedication and commitment to pediatric excellence provided our family with peace of mind during a challenging time. I am profoundly grateful for their exceptional service."
                     </p>
                 </div>
                 
@@ -702,7 +1016,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p class="text-gray-600 italic">
-                        "The cardiology department saved my life. The doctors are highly skilled and the facilities are world-class. What impressed me most was how they treated me with respect and dignity throughout my treatment."
+                        "The cardiology department at Edo Specialist Hospital literally saved my life. The medical team's exceptional expertise, combined with world-class facilities and cutting-edge technology, ensured I received the best possible cardiac care. However, what truly distinguished my experience was the consistent demonstration of respect, dignity, and genuine concern for my well-being throughout every stage of my treatment. This institution represents the pinnacle of medical excellence in Nigeria."
                     </p>
                 </div>
             </div>
@@ -710,10 +1024,10 @@
     </section>
 
     <!-- Latest News Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50" aria-labelledby="news-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Latest News & Updates</h2>
+            <header class="text-center mb-16" data-aos="fade-up">
+                <h2 id="news-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Latest News & Updates</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600">Stay informed about our latest developments and health tips</p>
             </div>
@@ -740,7 +1054,7 @@
                     <div class="p-6">
                         <div class="text-sm text-gray-500 mb-2">March 10, 2024</div>
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Medical Residency Applications Open</h3>
-                        <p class="text-gray-600 mb-4">Applications for our 2024-2025 residency programs are now open. We offer programs in multiple specialties with excellent training opportunities for Nigerian medical graduates.</p>
+                        <p class="text-gray-600 mb-4">Applications for our 2024-2025 medical residency programs are now being accepted. We offer comprehensive residency training programs across multiple medical specialties, providing exceptional educational opportunities designed specifically for Nigerian medical graduates seeking to advance their careers.</p>
                         <a href="/news" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                             Read More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
@@ -754,7 +1068,7 @@
                     <div class="p-6">
                         <div class="text-sm text-gray-500 mb-2">March 5, 2024</div>
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Health Awareness Campaign</h3>
-                        <p class="text-gray-600 mb-4">Join us for our annual health awareness campaign focusing on preventive care, early detection, and healthy lifestyle choices tailored for the Nigerian population.</p>
+                        <p class="text-gray-600 mb-4">We invite you to participate in our annual comprehensive health awareness campaign, which focuses on preventive care strategies, early disease detection, and evidence-based healthy lifestyle choices specifically tailored to address the unique health needs of the Nigerian population.</p>
                         <a href="/news" class="text-blue-600 font-semibold hover:underline inline-flex items-center">
                             Read More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
@@ -771,7 +1085,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
@@ -803,29 +1117,29 @@
                     </div>
                 </div>
                 
-                <div>
+                <nav aria-label="Footer navigation">
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="/about" class="hover:text-white transition">About Us</a></li>
-                        <li><a href="/services" class="hover:text-white transition">Services</a></li>
-                        <li><a href="/education" class="hover:text-white transition">Education</a></li>
-                        <li><a href="/doctors" class="hover:text-white transition">Our Doctors</a></li>
-                        <li><a href="/news" class="hover:text-white transition">News & Updates</a></li>
-                        <li><a href="/contact" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="/about" class="hover:text-white transition" aria-label="Learn more about Edo Specialist Hospital">About Us</a></li>
+                        <li><a href="/services" class="hover:text-white transition" aria-label="View our medical services">Services</a></li>
+                        <li><a href="/education" class="hover:text-white transition" aria-label="Medical education and training programs">Education</a></li>
+                        <li><a href="/doctors" class="hover:text-white transition" aria-label="Meet our medical team">Our Doctors</a></li>
+                        <li><a href="/news" class="hover:text-white transition" aria-label="Latest news and updates">News & Updates</a></li>
+                        <li><a href="/contact" class="hover:text-white transition" aria-label="Contact Edo Specialist Hospital">Contact</a></li>
                     </ul>
-                </div>
+                </nav>
                 
-                <div>
+                <nav aria-label="Medical services">
                     <h4 class="font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="/services" class="hover:text-white transition">Cardiology</a></li>
-                        <li><a href="/services" class="hover:text-white transition">Neurology</a></li>
-                        <li><a href="/services" class="hover:text-white transition">Pediatrics</a></li>
-                        <li><a href="/services" class="hover:text-white transition">Surgery</a></li>
-                        <li><a href="/services" class="hover:text-white transition">Emergency Care</a></li>
-                        <li><a href="/services" class="hover:text-white transition">View All</a></li>
+                        <li><a href="/services#cardiology" class="hover:text-white transition" aria-label="Cardiology services">Cardiology</a></li>
+                        <li><a href="/services#neurology" class="hover:text-white transition" aria-label="Neurology services">Neurology</a></li>
+                        <li><a href="/services#pediatrics" class="hover:text-white transition" aria-label="Pediatrics services">Pediatrics</a></li>
+                        <li><a href="/services#surgery" class="hover:text-white transition" aria-label="Surgery services">Surgery</a></li>
+                        <li><a href="/services#emergency" class="hover:text-white transition" aria-label="Emergency care services">Emergency Care</a></li>
+                        <li><a href="/services" class="hover:text-white transition" aria-label="View all medical services">View All</a></li>
                     </ul>
-                </div>
+                </nav>
                 
                 <div>
                     <h4 class="font-semibold mb-4">Contact & Hours</h4>
@@ -836,7 +1150,10 @@
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fas fa-phone text-blue-400"></i>
-                            <span>+234 (0) 123 456 7890</span>
+                            <div>
+                                <a href="tel:+2348029232591" class="hover:text-white transition block">+234 802 923 2591</a>
+                                <a href="tel:+23480117433744" class="hover:text-white transition block text-sm">+234 801 174 33744</a>
+                            </div>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fas fa-envelope text-blue-400"></i>
@@ -869,6 +1186,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/js/mobile-nav.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
         // Initialize AOS
@@ -963,19 +1281,7 @@
             }
         });
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-            });
-        }
+        // Mobile navigation is handled by /assets/js/mobile-nav.js
 
         // Back to top button
         const backToTop = document.getElementById('backToTop');
