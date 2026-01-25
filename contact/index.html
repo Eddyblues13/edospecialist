@@ -8,28 +8,91 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-3d {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-3d:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <div id="header-container"></div>
 
     <!-- Page Header -->
-    <section class="hero-gradient pt-32 pb-16 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl font-bold mb-4">Contact Us</h1>
-            <p class="text-xl text-blue-100">Get in touch with us for appointments, inquiries, or emergency services</p>
+    <section class="hero-gradient pt-32 pb-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
+                <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+                    Get in touch with us for appointments, inquiries, or emergency services. We're here to help 24/7.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Contact Information -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="card section-fade text-center">
-                    <div class="icon-box mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt"></i>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Multiple ways to reach us - choose what works best for you
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 floating">
+                        <i class="fas fa-map-marker-alt text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Address</h3>
-                    <p class="text-gray-600">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Address</h3>
+                    <p class="text-gray-600 leading-relaxed">
                         Edo Specialist Hospital<br>
                         Teaching Hospital Complex<br>
                         Benin City, Edo State<br>
@@ -37,61 +100,120 @@
                     </p>
                 </div>
                 
-                <div class="card section-fade text-center">
-                    <div class="icon-box mx-auto mb-4">
-                        <i class="fas fa-phone"></i>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-green-500 to-green-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 floating" style="animation-delay: 0.2s;">
+                        <i class="fas fa-phone text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Phone</h3>
-                    <p class="text-gray-600">
-                        Emergency: <a href="tel:+2341234567890" class="text-primary-600 hover:underline">+234 (0) 123 456 7890</a><br>
-                        General: <a href="tel:+2341234567891" class="text-primary-600 hover:underline">+234 (0) 123 456 7891</a><br>
-                        Appointments: <a href="tel:+2341234567892" class="text-primary-600 hover:underline">+234 (0) 123 456 7892</a>
-                    </p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Phone</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p>
+                            <span class="font-semibold">Emergency:</span><br>
+                            <a href="tel:+2348029232591" class="text-green-600 hover:text-green-800 hover:underline font-medium">+234 802 923 2591</a>
+                        </p>
+                        <p>
+                            <span class="font-semibold">General:</span><br>
+                            <a href="tel:+23480117433744" class="text-green-600 hover:text-green-800 hover:underline font-medium">+234 801 174 33744</a>
+                        </p>
+                        <p>
+                            <span class="font-semibold">Appointments:</span><br>
+                            <a href="tel:+23480117433744" class="text-green-600 hover:text-green-800 hover:underline font-medium">+234 801 174 33744</a>
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="card section-fade text-center">
-                    <div class="icon-box mx-auto mb-4">
-                        <i class="fas fa-envelope"></i>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 floating" style="animation-delay: 0.4s;">
+                        <i class="fas fa-envelope text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Email</h3>
-                    <p class="text-gray-600">
-                        <a href="mailto:info@edospecialisthospital.com.ng" class="text-primary-600 hover:underline">info@edospecialisthospital.com.ng</a><br>
-                        <a href="mailto:appointments@edospecialisthospital.com.ng" class="text-primary-600 hover:underline">appointments@edospecialisthospital.com.ng</a><br>
-                        <a href="mailto:edu@edospecialisthospital.com.ng" class="text-primary-600 hover:underline">edu@edospecialisthospital.com.ng</a>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Email</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p>
+                            <a href="mailto:info@edospecialisthospital.com.ng" class="text-purple-600 hover:text-purple-800 hover:underline font-medium block">info@edospecialisthospital.com.ng</a>
+                        </p>
+                        <p>
+                            <a href="mailto:appointments@edospecialisthospital.com.ng" class="text-purple-600 hover:text-purple-800 hover:underline font-medium block">appointments@edospecialisthospital.com.ng</a>
+                        </p>
+                        <p>
+                            <a href="mailto:edu@edospecialisthospital.com.ng" class="text-purple-600 hover:text-purple-800 hover:underline font-medium block">edu@edospecialisthospital.com.ng</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chief Medical Director Enquiry -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="zoom-in">
+                <div class="text-center mb-8">
+                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 floating">
+                        <i class="fas fa-user-md text-white text-4xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Chief Medical Director - Direct Enquiry</h2>
+                    <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                        For direct enquiries with Dr. Isaac Agbonkonkon, Chief Medical Director (CMD), please contact:
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div class="bg-white/20 backdrop-blur-lg rounded-xl p-6 text-center hover:bg-white/30 transition">
+                        <i class="fas fa-phone text-3xl mb-4 text-yellow-300"></i>
+                        <p class="text-blue-100 mb-2 font-medium">Primary Contact</p>
+                        <a href="tel:+2348029232591" class="text-2xl font-bold hover:text-yellow-300 transition block">
+                            +234 802 923 2591
+                        </a>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-lg rounded-xl p-6 text-center hover:bg-white/30 transition">
+                        <i class="fas fa-phone-alt text-3xl mb-4 text-yellow-300"></i>
+                        <p class="text-blue-100 mb-2 font-medium">Alternative Contact</p>
+                        <a href="tel:+23480117433744" class="text-2xl font-bold hover:text-yellow-300 transition block">
+                            +234 801 174 33744
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <p class="text-blue-100 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Available for administrative and medical leadership enquiries
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form & Map -->
-    <section class="py-20 bg-gray-50">
+    <!-- Contact Form & Appointment -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Appointment Form -->
-                <div class="section-fade">
-                    <div class="card">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Book an Appointment</h2>
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-gradient-to-br from-blue-500 to-blue-700 w-12 h-12 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar-check text-white text-xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900">Book an Appointment</h2>
+                        </div>
                         <form id="appointmentForm" data-validate class="space-y-6">
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Full Name <span class="text-red-500">*</span></label>
-                                <input type="text" name="name" required class="input-field">
+                                <label class="block text-gray-700 font-semibold mb-2">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required class="input-field" placeholder="Enter your full name">
                             </div>
                             
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
-                                    <input type="email" name="email" required class="input-field">
+                                    <label class="block text-gray-700 font-semibold mb-2">Email <span class="text-red-500">*</span></label>
+                                    <input type="email" name="email" required class="input-field" placeholder="your@email.com">
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-gray-700 font-medium mb-2">Phone <span class="text-red-500">*</span></label>
-                                    <input type="tel" name="phone" required class="input-field">
+                                    <label class="block text-gray-700 font-semibold mb-2">Phone <span class="text-red-500">*</span></label>
+                                    <input type="tel" name="phone" required class="input-field" placeholder="+234 XXX XXX XXXX">
                                 </div>
                             </div>
                             
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Department <span class="text-red-500">*</span></label>
+                                <label class="block text-gray-700 font-semibold mb-2">Department <span class="text-red-500">*</span></label>
                                 <select name="department" required class="input-field">
                                     <option value="">Select Department</option>
                                     <option>Cardiology</option>
@@ -107,76 +229,100 @@
                             
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-gray-700 font-medium mb-2">Preferred Date <span class="text-red-500">*</span></label>
+                                    <label class="block text-gray-700 font-semibold mb-2">Preferred Date <span class="text-red-500">*</span></label>
                                     <input type="date" name="date" required class="input-field">
                                 </div>
                                 
                                 <div id="timeSlotContainer">
-                                    <!-- Time slots will be generated here -->
+                                    <label class="block text-gray-700 font-semibold mb-2">Time <span class="text-red-500">*</span></label>
+                                    <select name="time" required class="input-field">
+                                        <option value="">Select Time</option>
+                                        <option>9:00 AM</option>
+                                        <option>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                        <option>12:00 PM</option>
+                                        <option>2:00 PM</option>
+                                        <option>3:00 PM</option>
+                                        <option>4:00 PM</option>
+                                        <option>5:00 PM</option>
+                                    </select>
                                 </div>
                             </div>
                             
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Reason for Visit</label>
-                                <textarea name="message" rows="4" class="input-field"></textarea>
+                                <label class="block text-gray-700 font-semibold mb-2">Reason for Visit</label>
+                                <textarea name="message" rows="4" class="input-field" placeholder="Please describe your reason for the appointment..."></textarea>
                             </div>
                             
-                            <button type="submit" class="btn-primary w-full">
-                                Submit Appointment Request
+                            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i>Submit Appointment Request
                             </button>
                         </form>
                     </div>
                 </div>
                 
                 <!-- Contact Form & Info -->
-                <div class="space-y-8">
-                    <div class="card section-fade">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                <div class="space-y-8" data-aos="fade-left">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-gradient-to-br from-green-500 to-green-700 w-12 h-12 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900">Send us a Message</h2>
+                        </div>
                         <form id="contactForm" data-validate class="space-y-6">
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Name <span class="text-red-500">*</span></label>
-                                <input type="text" name="name" required class="input-field">
+                                <label class="block text-gray-700 font-semibold mb-2">Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required class="input-field" placeholder="Your name">
                             </div>
                             
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
-                                <input type="email" name="email" required class="input-field">
+                                <label class="block text-gray-700 font-semibold mb-2">Email <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required class="input-field" placeholder="your@email.com">
                             </div>
                             
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Subject <span class="text-red-500">*</span></label>
-                                <input type="text" name="subject" required class="input-field">
+                                <label class="block text-gray-700 font-semibold mb-2">Subject <span class="text-red-500">*</span></label>
+                                <input type="text" name="subject" required class="input-field" placeholder="Message subject">
                             </div>
                             
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Message <span class="text-red-500">*</span></label>
-                                <textarea name="message" rows="5" required class="input-field"></textarea>
+                                <label class="block text-gray-700 font-semibold mb-2">Message <span class="text-red-500">*</span></label>
+                                <textarea name="message" rows="5" required class="input-field" placeholder="Your message..."></textarea>
                             </div>
                             
-                            <button type="submit" class="btn-primary w-full">
-                                Send Message
+                            <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
                             </button>
                         </form>
                     </div>
                     
-                    <div class="card section-fade bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-                        <h3 class="text-2xl font-bold mb-4">Operating Hours</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span>Emergency Services</span>
-                                <span class="font-semibold">24/7</span>
+                    <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-white/20 backdrop-blur-lg w-12 h-12 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Operating Hours</h3>
                             </div>
-                            <div class="flex justify-between">
-                                <span>Outpatient Clinic</span>
-                                <span class="font-semibold">Mon-Fri: 8AM-6PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Saturday</span>
-                                <span class="font-semibold">9AM-2PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Sunday</span>
-                                <span class="font-semibold">Emergency Only</span>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center p-3 bg-white/10 backdrop-blur-lg rounded-lg">
+                                    <span class="font-medium">Emergency Services</span>
+                                    <span class="font-bold text-yellow-300">24/7</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-white/10 backdrop-blur-lg rounded-lg">
+                                    <span class="font-medium">Outpatient Clinic</span>
+                                    <span class="font-semibold">Mon-Fri: 8AM-6PM</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-white/10 backdrop-blur-lg rounded-lg">
+                                    <span class="font-medium">Saturday</span>
+                                    <span class="font-semibold">9AM-2PM</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-white/10 backdrop-blur-lg rounded-lg">
+                                    <span class="font-medium">Sunday</span>
+                                    <span class="font-semibold">Emergency Only</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -188,17 +334,21 @@
     <!-- Map Section -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 section-fade">
-                <h2 class="section-title">Find Us</h2>
-                <div class="divider"></div>
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Find Us</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Visit us at our location in Benin City</p>
             </div>
             
-            <div class="section-fade">
-                <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-                    <div class="text-center">
-                        <i class="fas fa-map-marked-alt text-primary-600 text-6xl mb-4"></i>
-                        <p class="text-gray-600 text-lg">Interactive map would be embedded here</p>
-                        <p class="text-gray-500 mt-2">Edo Specialist Hospital, Teaching Hospital Complex, Benin City</p>
+            <div data-aos="zoom-in">
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl h-96 flex items-center justify-center shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
+                    <div class="text-center relative z-10">
+                        <div class="bg-white/90 backdrop-blur-lg rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 floating">
+                            <i class="fas fa-map-marked-alt text-blue-600 text-4xl"></i>
+                        </div>
+                        <p class="text-gray-700 text-xl font-semibold mb-2">Interactive map would be embedded here</p>
+                        <p class="text-gray-600">Edo Specialist Hospital, Teaching Hospital Complex, Benin City, Edo State, Nigeria</p>
                     </div>
                 </div>
             </div>
@@ -206,13 +356,40 @@
     </section>
 
     <div id="footer-container"></div>
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary-600 text-white p-4 rounded-full shadow-lg hover:bg-primary-700 transition opacity-0 invisible z-40">
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition opacity-0 invisible z-40 transform hover:scale-110">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/appointment.js"></script>
     <script src="/assets/js/loadPartials.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                    backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTop.classList.add('opacity-0', 'invisible');
+                    backToTop.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
 </body>
 </html>
-

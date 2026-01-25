@@ -8,111 +8,160 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-3d {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-3d:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <div id="header-container"></div>
 
     <!-- Page Header -->
-    <section class="hero-gradient pt-32 pb-16 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl font-bold mb-4">Medical Education & Training</h1>
-            <p class="text-xl text-blue-100">Training the next generation of healthcare professionals</p>
+    <section class="hero-gradient pt-32 pb-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Medical Education & Training</h1>
+                <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+                    Training the next generation of healthcare professionals with excellence and dedication
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Programs Overview -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 section-fade">
-                <h2 class="section-title">Our Educational Programs</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Educational Programs</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Comprehensive training programs designed to develop skilled and compassionate healthcare professionals
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="card section-fade">
-                    <div class="icon-box">
-                        <i class="fas fa-graduation-cap"></i>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Medical Residency Programs</h3>
                     <p class="text-gray-600 mb-4">
                         Accredited residency programs in various specialties including Internal Medicine, Surgery, Pediatrics, Obstetrics & Gynecology, and more.
                     </p>
                     <ul class="text-gray-600 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>4-5 year programs</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Hands-on clinical training</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Research opportunities</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Board certification preparation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>4-5 year programs</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Hands-on clinical training</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Research opportunities</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Board certification preparation</li>
                     </ul>
-                    <a href="/contact" class="btn-primary">Apply Now</a>
+                    <a href="/contact" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 inline-block">
+                        Apply Now
+                    </a>
                 </div>
                 
-                <div class="card section-fade">
-                    <div class="icon-box">
-                        <i class="fas fa-user-graduate"></i>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-green-500 to-green-700 w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-user-graduate text-white text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Medical Student Rotations</h3>
                     <p class="text-gray-600 mb-4">
                         Clinical rotations for medical students from affiliated universities, providing hands-on experience in various specialties.
                     </p>
                     <ul class="text-gray-600 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Core rotations available</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Elective rotations</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Supervised clinical experience</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Mentorship programs</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Core rotations available</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Elective rotations</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Supervised clinical experience</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Mentorship programs</li>
                     </ul>
-                    <a href="/contact" class="btn-primary">Learn More</a>
+                    <a href="/contact" class="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 inline-block">
+                        Learn More
+                    </a>
                 </div>
                 
-                <div class="card section-fade">
-                    <div class="icon-box">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Continuing Medical Education</h3>
                     <p class="text-gray-600 mb-4">
                         Regular CME programs, conferences, and workshops for healthcare professionals to stay updated with latest medical advances.
                     </p>
                     <ul class="text-gray-600 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Monthly CME sessions</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Annual medical conferences</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Specialty workshops</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Online learning modules</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Monthly CME sessions</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Annual medical conferences</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Specialty workshops</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Online learning modules</li>
                     </ul>
-                    <a href="/contact" class="btn-primary">Register</a>
+                    <a href="/contact" class="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 inline-block">
+                        Register
+                    </a>
                 </div>
                 
-                <div class="card section-fade">
-                    <div class="icon-box">
-                        <i class="fas fa-flask"></i>
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-br from-orange-500 to-orange-700 w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-flask text-white text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Research Opportunities</h3>
                     <p class="text-gray-600 mb-4">
                         Active research programs and opportunities for residents and students to participate in medical research and publications.
                     </p>
                     <ul class="text-gray-600 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Clinical research projects</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Publication support</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Research grants</li>
-                        <li><i class="fas fa-check text-primary-600 mr-2"></i>Collaborative studies</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Clinical research projects</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Publication support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Research grants</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Collaborative studies</li>
                     </ul>
-                    <a href="/contact" class="btn-primary">Get Involved</a>
+                    <a href="/contact" class="bg-gradient-to-r from-orange-600 to-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 inline-block">
+                        Get Involved
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="section-fade">
-                    <h2 class="section-title text-left">Why Choose Our Programs?</h2>
-                    <div class="space-y-6 mt-8">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-primary-600 text-white rounded-lg p-3 flex-shrink-0">
-                                <i class="fas fa-check"></i>
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Why Choose Our Programs?</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-8"></div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                            <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-lg p-3 flex-shrink-0">
+                                <i class="fas fa-certificate text-xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Accredited Programs</h3>
@@ -120,9 +169,9 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-primary-600 text-white rounded-lg p-3 flex-shrink-0">
-                                <i class="fas fa-check"></i>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                            <div class="bg-gradient-to-br from-green-500 to-green-700 text-white rounded-lg p-3 flex-shrink-0">
+                                <i class="fas fa-user-md text-xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Experienced Faculty</h3>
@@ -130,9 +179,9 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-primary-600 text-white rounded-lg p-3 flex-shrink-0">
-                                <i class="fas fa-check"></i>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                            <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white rounded-lg p-3 flex-shrink-0">
+                                <i class="fas fa-hospital text-xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold text-gray-900 mb-2">State-of-the-Art Facilities</h3>
@@ -140,9 +189,9 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-primary-600 text-white rounded-lg p-3 flex-shrink-0">
-                                <i class="fas fa-check"></i>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+                            <div class="bg-gradient-to-br from-orange-500 to-orange-700 text-white rounded-lg p-3 flex-shrink-0">
+                                <i class="fas fa-users text-xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Diverse Patient Population</h3>
@@ -152,30 +201,33 @@
                     </div>
                 </div>
                 
-                <div class="section-fade">
-                    <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-6">Application Process</h3>
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
-                                <span>Submit application form</span>
+                <div data-aos="fade-left">
+                    <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-3xl font-bold mb-8">Application Process</h3>
+                            <div class="space-y-6 mb-10">
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">1</div>
+                                    <span class="text-lg font-medium">Submit application form</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">2</div>
+                                    <span class="text-lg font-medium">Provide required documents</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">3</div>
+                                    <span class="text-lg font-medium">Interview and assessment</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-white/20 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">4</div>
+                                    <span class="text-lg font-medium">Acceptance and enrollment</span>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
-                                <span>Provide required documents</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
-                                <span>Interview and assessment</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center font-bold">4</div>
-                                <span>Acceptance and enrollment</span>
-                            </div>
+                            <a href="/contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition duration-300 inline-block">
+                                Start Application
+                            </a>
                         </div>
-                        <a href="/contact" class="btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
-                            Start Application
-                        </a>
                     </div>
                 </div>
             </div>
@@ -185,34 +237,115 @@
     <!-- Statistics -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Program Statistics</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+            </div>
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center section-fade">
-                    <div class="text-5xl font-bold text-primary-600 mb-4" data-counter="500">0</div>
-                    <div class="text-gray-600">Medical Students</div>
+                <div class="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-lg hover:shadow-xl transition card-3d" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 floating">
+                        <i class="fas fa-user-graduate text-white text-2xl"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-blue-600 mb-4 counter" data-counter="500">0</div>
+                    <div class="text-gray-700 font-semibold">Medical Students</div>
                 </div>
-                <div class="text-center section-fade">
-                    <div class="text-5xl font-bold text-primary-600 mb-4" data-counter="150">0</div>
-                    <div class="text-gray-600">Residents</div>
+                <div class="text-center p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-lg hover:shadow-xl transition card-3d" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-green-500 to-green-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.2s;">
+                        <i class="fas fa-user-md text-white text-2xl"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-green-600 mb-4 counter" data-counter="150">0</div>
+                    <div class="text-gray-700 font-semibold">Residents</div>
                 </div>
-                <div class="text-center section-fade">
-                    <div class="text-5xl font-bold text-primary-600 mb-4" data-counter="50">0</div>
-                    <div class="text-gray-600">Faculty Members</div>
+                <div class="text-center p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition card-3d" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.4s;">
+                        <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-purple-600 mb-4 counter" data-counter="50">0</div>
+                    <div class="text-gray-700 font-semibold">Faculty Members</div>
                 </div>
-                <div class="text-center section-fade">
-                    <div class="text-5xl font-bold text-primary-600 mb-4" data-counter="20">0</div>
-                    <div class="text-gray-600">Specialty Programs</div>
+                <div class="text-center p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-lg hover:shadow-xl transition card-3d" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="bg-gradient-to-br from-orange-500 to-orange-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 floating" style="animation-delay: 0.6s;">
+                        <i class="fas fa-book text-white text-2xl"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-orange-600 mb-4 counter" data-counter="20">0</div>
+                    <div class="text-gray-700 font-semibold">Specialty Programs</div>
                 </div>
             </div>
         </div>
     </section>
 
     <div id="footer-container"></div>
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary-600 text-white p-4 rounded-full shadow-lg hover:bg-primary-700 transition opacity-0 invisible z-40">
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition opacity-0 invisible z-40 transform hover:scale-110">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/loadPartials.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                    backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTop.classList.add('opacity-0', 'invisible');
+                    backToTop.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-counter'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            updateCounter();
+        };
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    </script>
 </body>
 </html>
-
