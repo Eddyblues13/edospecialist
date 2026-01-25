@@ -39,6 +39,17 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
+        
+        /* Ensure content is visible even if AOS doesn't load */
+        [data-aos] {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Show content immediately */
+        section {
+            display: block !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -358,13 +369,28 @@
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/loadPartials.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
+        // Initialize AOS when ready
+        function initAOS() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    offset: 100,
+                    disable: false
+                });
+            } else {
+                // Retry if AOS not loaded yet
+                setTimeout(initAOS, 100);
+            }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initAOS);
+        } else {
+            initAOS();
+        }
 
         // Back to top button
         const backToTop = document.getElementById('backToTop');
